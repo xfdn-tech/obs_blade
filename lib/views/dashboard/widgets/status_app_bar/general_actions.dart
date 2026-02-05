@@ -45,6 +45,7 @@ class GeneralActions extends StatelessWidget {
             SettingsKeys.DontShowRecordStopMessage,
             SettingsKeys.DontShowStreamStartMessage,
             SettingsKeys.DontShowStreamStopMessage,
+            SettingsKeys.TabletHorizontalLayout,
           ],
           builder: (context, settingsBox, child) => Observer(
             builder: (context) => AppBarActions(
@@ -235,6 +236,20 @@ class GeneralActions extends StatelessWidget {
                                 ),
                               );
                             },
+                ),
+                AppBarActionEntry(
+                  title:
+                      'Layout: ${settingsBox.get(SettingsKeys.TabletHorizontalLayout.name, defaultValue: false) ? 'Vertical' : 'Horizontal'}',
+                  leadingIcon: CupertinoIcons.rectangle_on_rectangle,
+                  onAction: () {
+                    settingsBox.put(
+                      SettingsKeys.TabletHorizontalLayout.name,
+                      !settingsBox.get(
+                        SettingsKeys.TabletHorizontalLayout.name,
+                        defaultValue: false,
+                      ),
+                    );
+                  },
                 ),
                 AppBarActionEntry(
                   title: '${newConnection ? 'Save' : 'Edit'} Connection',

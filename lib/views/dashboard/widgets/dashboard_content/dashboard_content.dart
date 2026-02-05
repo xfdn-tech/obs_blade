@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 
 import '../../../../shared/general/base/divider.dart';
 import '../../../../shared/general/custom_sliver_list.dart';
+import '../../../../shared/general/hive_builder.dart';
 import '../../../../shared/general/responsive_widget_wrapper.dart';
+import '../../../../types/enums/hive_keys.dart';
+import '../../../../types/enums/settings_keys.dart';
 import '../obs_widgets/obs_widgets.dart';
 import '../obs_widgets/obs_widgets_mobile.dart';
+import 'dashboard_horizontal_section.dart';
 import 'exposed_controls/exposed_controls.dart';
 import 'profile_scene_collection/profile_scene_collection.dart';
 import 'scene_buttons/scene_buttons.dart';
@@ -24,50 +28,25 @@ class DashboardContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomSliverList(
       children: [
-        const Padding(
+        Padding(
           padding: EdgeInsets.only(bottom: 24.0),
           child: Column(
             children: [
-              ProfileSceneCollection(),
-              ExposedControls(),
-              SizedBox(height: 24.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  StudioModeCheckbox(),
-                  SizedBox(width: 24.0),
-                ],
-              ),
-              Center(
-                child: Padding(
-                  padding: EdgeInsets.only(
-                    top: 32.0,
-                    left: 18.0,
-                    right: 18.0,
-                  ),
-                  child: SceneButtons(),
+              ResponsiveWidgetWrapper(
+                mobileWidget: const _DashboardVerticalTopSection(),
+                tabletWidget: HiveBuilder<dynamic>(
+                  hiveKey: HiveKeys.Settings,
+                  rebuildKeys: const [SettingsKeys.TabletHorizontalLayout],
+                  builder: (context, settingsBox, child) =>
+                      settingsBox.get(
+                                SettingsKeys.TabletHorizontalLayout.name,
+                                defaultValue: false,
+                              )
+                          ? const DashboardHorizontalSection()
+                          : const _DashboardVerticalTopSection(),
                 ),
               ),
-              // BaseButton(
-              //   onPressed: () => NetworkHelper.makeRequest(
-              //       GetIt.instance<NetworkStore>().activeSession.socket,
-              //       RequestType.PlayPauseMedia,
-              //       {'sourceName': 'was geht ab', 'playPause': false}),
-              //   text: 'SOUND',
-              // ),
-              SizedBox(height: 24.0),
-              StudioModeTransitionButton(),
-              SizedBox(height: 24.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  TransitionControls(),
-                  SizedBox(width: 24.0),
-                ],
-              ),
-              SizedBox(height: 24.0),
-              ScenePreview(),
-              SizedBox(height: 24.0),
+              const SizedBox(height: 24.0),
               ResponsiveWidgetWrapper(
                 mobileWidget: SceneContentMobile(),
                 tabletWidget: SceneContent(),
@@ -100,6 +79,50 @@ class DashboardContent extends StatelessWidget {
             ],
           ),
         ),
+      ],
+    );
+  }
+}
+
+class _DashboardVerticalTopSection extends StatelessWidget {
+  const _DashboardVerticalTopSection();
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      children: [
+        ProfileSceneCollection(),
+        ExposedControls(),
+        SizedBox(height: 24.0),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            StudioModeCheckbox(),
+            SizedBox(width: 24.0),
+          ],
+        ),
+        Center(
+          child: Padding(
+            padding: EdgeInsets.only(
+              top: 32.0,
+              left: 18.0,
+              right: 18.0,
+            ),
+            child: SceneButtons(),
+          ),
+        ),
+        SizedBox(height: 24.0),
+        StudioModeTransitionButton(),
+        SizedBox(height: 24.0),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            TransitionControls(),
+            SizedBox(width: 24.0),
+          ],
+        ),
+        SizedBox(height: 24.0),
+        ScenePreview(),
       ],
     );
   }

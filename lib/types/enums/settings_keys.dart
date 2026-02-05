@@ -120,6 +120,9 @@ enum SettingsKeys {
   /// elements in the dashboard will be shown
   DashboardElementsOrder,
 
+  /// [bool]: If true, use horizontal layout for tablet dashboard
+  TabletHorizontalLayout,
+
   /// ******************************************************************************
   /// "Don't show dialog again" - settings set by user by checkbox in dialog
   /// IMPORTANT: Name should always start with 'DontShow'/'dont-show'
@@ -202,6 +205,7 @@ enum SettingsKeys {
             'expose-input-audio-sync-offset',
         SettingsKeys.UnlimitedReconnects: 'unlimited-reconnects',
         SettingsKeys.DashboardElementsOrder: 'dashboard-elements-order',
+        SettingsKeys.TabletHorizontalLayout: 'tablet-horizontal-layout',
         SettingsKeys.DontShowPreviewWarning: 'dont-show-preview-warning',
         SettingsKeys.DontShowHidingSceneItemsWarning:
             'dont-show-hiding-scene-items-warning',

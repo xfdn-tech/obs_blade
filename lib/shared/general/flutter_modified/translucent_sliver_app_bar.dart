@@ -682,7 +682,7 @@ class _ScrollUnderFlexibleSpace extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    late final AppBarTheme appBarTheme = AppBarTheme.of(context);
+    late final AppBarThemeData appBarTheme = AppBarTheme.of(context);
     late final AppBarTheme defaults = Theme.of(context).useMaterial3
         ? _AppBarDefaultsM3(context)
         : _AppBarDefaultsM2(context);
