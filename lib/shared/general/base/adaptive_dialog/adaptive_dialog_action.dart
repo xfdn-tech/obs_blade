@@ -30,10 +30,10 @@ class AdaptiveDialogAction extends StatelessWidget {
           onPressed: this.onPressed,
           style: this.isDestructiveAction
               ? ButtonStyle(
-                  foregroundColor: const MaterialStatePropertyAll(
+                  foregroundColor: const WidgetStatePropertyAll(
                       CupertinoColors.destructiveRed),
-                  overlayColor: MaterialStatePropertyAll(
-                    CupertinoColors.destructiveRed.withOpacity(0.1),
+                  overlayColor: WidgetStatePropertyAll(
+                    CupertinoColors.destructiveRed.withValues(alpha: 0.1),
                   ),
                 )
               : null,

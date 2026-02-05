@@ -86,7 +86,9 @@ class SceneButtons extends StatelessWidget {
             try {
               hiddenScene = hiddenScenes.firstWhere(
                   (element) => element.sceneName == scene.sceneName);
-            } catch (e) {}
+            } catch (e) {
+              debugPrint(e.toString());
+            }
 
             return SceneButton(
               scene: scene,

@@ -97,7 +97,7 @@ class TipsContent extends StatelessWidget {
                           purchaseParam: PurchaseParam(productDetails: tip),
                         ),
                       )
-                      .toList(),
+                      ,
               ],
             ),
           ),

@@ -15,14 +15,14 @@ class DashboardHorizontalSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(
           flex: 3,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: const [
+            children: [
               ProfileSceneCollection(),
               ExposedControls(),
               SizedBox(height: 24.0),
@@ -46,12 +46,12 @@ class DashboardHorizontalSection extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(width: 24.0),
+        SizedBox(width: 24.0),
         Expanded(
           flex: 2,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: const [
+            children: [
               StudioModeTransitionButton(),
               SizedBox(height: 24.0),
               Row(

@@ -132,7 +132,7 @@ class _TabBaseState extends State<TabBase> {
       bottomNavigationBar: Observer(
         builder: (context) => CupertinoTabBar(
           backgroundColor: !StylingHelper.isApple(context)
-              ? CupertinoTheme.of(context).barBackgroundColor.withOpacity(1.0)
+              ? CupertinoTheme.of(context).barBackgroundColor.withValues(alpha:1.0)
               : null,
           activeColor: Theme.of(context).colorScheme.secondary,
           currentIndex: tabsStore.activeTab.index,

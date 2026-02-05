@@ -33,7 +33,7 @@ class StylingHelper {
 
   /// Bouncing scroll for all cases
   ///
-  /// TODO: Check why currently only [BouncingScrollPhysics] seems
+  
   /// to work properly for the [RefresherAppBar] to always scroll on
   /// both iOS and Android
   static ScrollPhysics get platformAwareScrollPhysics => Platform.isIOS

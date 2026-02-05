@@ -1,4 +1,5 @@
 /// Custom icons made on fluttericon.com
+library;
 import 'package:flutter/widgets.dart';
 
 class CustomFlutterIcons {

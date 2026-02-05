@@ -29,7 +29,7 @@ class DashboardContent extends StatelessWidget {
     return CustomSliverList(
       children: [
         Padding(
-          padding: EdgeInsets.only(bottom: 24.0),
+          padding: const EdgeInsets.only(bottom: 24.0),
           child: Column(
             children: [
               ResponsiveWidgetWrapper(
@@ -47,7 +47,7 @@ class DashboardContent extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 24.0),
-              ResponsiveWidgetWrapper(
+              const ResponsiveWidgetWrapper(
                 mobileWidget: SceneContentMobile(),
                 tabletWidget: SceneContent(),
               ),

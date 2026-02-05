@@ -69,7 +69,7 @@ class AppBarActions extends StatelessWidget {
                           style: action.onAction == null
                               ? TextStyle(
                                   color: CupertinoColors.systemBlue
-                                      .withOpacity(0.3),
+                                      .withValues(alpha: 0.3),
                                 )
                               : null,
                         ),
@@ -95,7 +95,7 @@ class AppBarActions extends StatelessWidget {
                 ],
                 ...ListTile.divideTiles(
                   context: context,
-                  color: StylingHelper.light_divider_color.withOpacity(0.0),
+                  color: StylingHelper.light_divider_color.withValues(alpha: 0.0),
                   tiles: this.actions.map(
                         (action) => ListTile(
                           onTap: () {

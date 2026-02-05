@@ -31,7 +31,7 @@ class StatisticsView extends StatefulWidget {
 }
 
 class _StatisticsViewState extends State<StatisticsView> {
-  final Random _random = Random();
+  final Random random = Random();
 
   // late List<PastStreamData> _pastStreamData;
 
@@ -126,9 +126,9 @@ class _StatisticsViewState extends State<StatisticsView> {
                           .reduce((value, element) => value += element) ~/
                       dataOrder2.kbitsPerSecList.length);
               break;
-            default:
-              sortResult = dataOrder1.listEntryDateMS.last -
-                  dataOrder2.listEntryDateMS.last;
+            // default:
+            //   sortResult = dataOrder1.listEntryDateMS.last -
+            //       dataOrder2.listEntryDateMS.last;
           }
 
           return sortResult;

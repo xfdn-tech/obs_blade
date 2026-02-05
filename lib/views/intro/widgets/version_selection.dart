@@ -37,7 +37,7 @@ class _VersionSelectionState extends State<VersionSelection> {
             paintBorder: true,
             topPadding: 32.0,
             bottomPadding: 18.0,
-            borderColor: Theme.of(context).dividerColor.withOpacity(0.2),
+            borderColor: Theme.of(context).dividerColor.withValues(alpha:0.2),
             title: 'Version',
             trailingTitleWidget: const QuestionMarkTooltip(
                 message:

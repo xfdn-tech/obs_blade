@@ -73,7 +73,7 @@ class TransculentCupertinoNavBarWrapper extends StatelessWidget {
         CupertinoNavigationBar(
           backgroundColor: StylingHelper.isApple(context)
               ? Theme.of(context).appBarTheme.backgroundColor
-              : Theme.of(context).appBarTheme.backgroundColor!.withOpacity(1.0),
+              : Theme.of(context).appBarTheme.backgroundColor!.withValues(alpha:1.0),
           leading: this.leading,
           previousPageTitle: this.previousTitle,
           middle: this.titleWidget ??

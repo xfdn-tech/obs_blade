@@ -39,7 +39,7 @@ class _StatsState extends State<Stats> {
               activeDotColor: Theme.of(context)
                   .switchTheme
                   .trackColor!
-                  .resolve({MaterialState.selected})!,
+                  .resolve({WidgetState.selected})!,
               dotHeight: 10.0,
               dotWidth: 10.0,
             ),

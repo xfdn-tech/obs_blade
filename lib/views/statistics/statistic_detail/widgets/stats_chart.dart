@@ -133,11 +133,11 @@ class StatsChart extends StatelessWidget {
                 show: true,
                 border: Border(
                   bottom: BorderSide(
-                    color: StylingHelper.light_divider_color.withOpacity(0.2),
+                    color: StylingHelper.light_divider_color.withValues(alpha:0.2),
                     width: 1,
                   ),
                   left: BorderSide(
-                    color: StylingHelper.light_divider_color.withOpacity(0.2),
+                    color: StylingHelper.light_divider_color.withValues(alpha:0.2),
                     width: 1,
                   ),
                   right: const BorderSide(

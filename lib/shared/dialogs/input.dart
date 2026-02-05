@@ -85,8 +85,8 @@ class _InputDialogState extends State<InputDialog> {
             bool valid = true;
             if (this.widget.inputCheck != null) {
               _formKey.currentState!.validate();
-              (_controller as CustomValidationTextEditingController).submit();
-              valid = (_controller as CustomValidationTextEditingController)
+              (_controller).submit();
+              valid = (_controller)
                   .isValid;
             }
             if (valid) {

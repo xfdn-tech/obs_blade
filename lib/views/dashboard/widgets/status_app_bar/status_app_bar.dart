@@ -30,7 +30,7 @@ class StatusAppBar extends StatelessWidget {
       elevation: 0,
       toolbarHeight: kTextTabBarHeight + 24.0,
       backgroundColor: !StylingHelper.isApple(context)
-          ? Theme.of(context).appBarTheme.backgroundColor!.withOpacity(1.0)
+          ? Theme.of(context).appBarTheme.backgroundColor!.withValues(alpha:1.0)
           : null,
       bottom: const PreferredSize(
         preferredSize: Size.fromHeight(24.0),

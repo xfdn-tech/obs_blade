@@ -30,7 +30,7 @@ class SupportHeader extends StatelessWidget {
                     color: Theme.of(context)
                         .switchTheme
                         .trackColor!
-                        .resolve({MaterialState.selected}),
+                        .resolve({WidgetState.selected}),
                     borderRadius: const BorderRadius.all(
                       Radius.circular(12.0),
                     ),

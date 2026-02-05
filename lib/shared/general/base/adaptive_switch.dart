@@ -35,11 +35,11 @@ class BaseAdaptiveSwitch extends StatelessWidget {
       child: StylingHelper.isApple(context)
           ? CupertinoSwitch(
               value: this.value,
-              activeColor: this.activeColor ??
+              activeTrackColor: this.activeColor ??
                   Theme.of(context)
                       .switchTheme
                       .trackColor!
-                      .resolve({MaterialState.selected}),
+                      .resolve({WidgetState.selected}),
               onChanged: this.enabled ? this.onChanged : null,
             )
           : Switch(
@@ -54,7 +54,7 @@ class BaseAdaptiveSwitch extends StatelessWidget {
               //             .switchTheme
               //             .trackColor!
               //             .resolve({MaterialState.selected}))!
-              //     .withOpacity(0.5),
+              //     .withValues(alpha:0.5),
               onChanged: this.enabled ? this.onChanged : null,
             ),
     );

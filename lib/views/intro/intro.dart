@@ -63,7 +63,7 @@ class _IntroViewState extends State<IntroView> {
     return Scaffold(
       body: SizedBox.expand(
         child: Container(
-          color: Theme.of(context).colorScheme.background,
+          color: Theme.of(context).colorScheme.surface,
           child: Observer(builder: (context) {
             return AnimatedSwitcher(
               duration: const Duration(milliseconds: 1000),

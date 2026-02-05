@@ -23,9 +23,8 @@ class ThemedCupertinoButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoButton(
-      minSize: this.minSize ?? kMinInteractiveDimensionCupertino,
       padding: this.padding,
-      onPressed: this.onPressed,
+      onPressed: this.onPressed, minimumSize: Size(this.minSize ?? kMinInteractiveDimensionCupertino, this.minSize ?? kMinInteractiveDimensionCupertino),
       child: DefaultTextStyle.merge(
         style: TextStyle(
           color: this.onPressed != null

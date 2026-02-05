@@ -35,7 +35,7 @@ class LicenseDetail extends StatelessWidget {
                             ),
                           ),
                         )
-                        .toList(),
+                        ,
                   ],
                 ),
               ),

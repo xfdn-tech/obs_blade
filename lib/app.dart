@@ -86,7 +86,6 @@ class App extends StatelessWidget {
               : '212123'.hexToColor()),
       canvasColor: canvasColor ?? StylingHelper.primary_color,
       cardColor: cardColor ?? StylingHelper.primary_color,
-      indicatorColor: indicatorColor ?? StylingHelper.highlight_color,
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
 
@@ -133,11 +132,11 @@ class App extends StatelessWidget {
           ),
         ),
         overlayColor:
-            (sliderColor ?? StylingHelper.highlight_color).withOpacity(0.3),
+            (sliderColor ?? StylingHelper.highlight_color).withValues(alpha:0.3),
         inactiveTrackColor:
-            (sliderColor ?? StylingHelper.highlight_color).withOpacity(0.3),
+            (sliderColor ?? StylingHelper.highlight_color).withValues(alpha:0.3),
         inactiveTickMarkColor: Colors
-            .transparent, //(sliderColor ?? StylingHelper.highlight_color).withOpacity(0.3),
+            .transparent, //(sliderColor ?? StylingHelper.highlight_color).withValues(alpha:0.3),
       ),
 
       tabBarTheme: TabBarThemeData(
@@ -148,7 +147,7 @@ class App extends StatelessWidget {
 
       appBarTheme: AppBarTheme(
         backgroundColor: (appBarColor ?? StylingHelper.primary_color)
-            .withOpacity(StylingHelper.opacity_blurry),
+            .withValues(alpha:StylingHelper.opacity_blurry),
         surfaceTintColor: Colors.transparent,
       ),
 
@@ -171,46 +170,46 @@ class App extends StatelessWidget {
           primaryColor: hightlightColor ?? StylingHelper.highlight_color,
         ),
         barBackgroundColor: (tabBarColor ?? StylingHelper.primary_color)
-            .withOpacity(StylingHelper.opacity_blurry),
+            .withValues(alpha:StylingHelper.opacity_blurry),
       ),
       switchTheme: SwitchThemeData(
-        thumbColor: MaterialStateProperty.resolveWith<Color?>(
-            (Set<MaterialState> states) {
-          if (states.contains(MaterialState.selected)) {
+        thumbColor: WidgetStateProperty.resolveWith<Color?>(
+            (Set<WidgetState> states) {
+          if (states.contains(WidgetState.selected)) {
             return Colors.white;
           }
           return null;
         }),
-        trackColor: MaterialStateProperty.resolveWith<Color?>(
-            (Set<MaterialState> states) {
-          if (states.contains(MaterialState.disabled)) {
+        trackColor: WidgetStateProperty.resolveWith<Color?>(
+            (Set<WidgetState> states) {
+          if (states.contains(WidgetState.disabled)) {
             return null;
           }
-          if (states.contains(MaterialState.selected)) {
+          if (states.contains(WidgetState.selected)) {
             return toggleableActiveColor ?? StylingHelper.accent_color;
           }
           return null;
         }),
       ),
       radioTheme: RadioThemeData(
-        fillColor: MaterialStateProperty.resolveWith<Color?>(
-            (Set<MaterialState> states) {
-          if (states.contains(MaterialState.disabled)) {
+        fillColor: WidgetStateProperty.resolveWith<Color?>(
+            (Set<WidgetState> states) {
+          if (states.contains(WidgetState.disabled)) {
             return null;
           }
-          if (states.contains(MaterialState.selected)) {
+          if (states.contains(WidgetState.selected)) {
             return toggleableActiveColor ?? StylingHelper.accent_color;
           }
           return null;
         }),
       ),
       checkboxTheme: CheckboxThemeData(
-        fillColor: MaterialStateProperty.resolveWith<Color?>(
-            (Set<MaterialState> states) {
-          if (states.contains(MaterialState.disabled)) {
+        fillColor: WidgetStateProperty.resolveWith<Color?>(
+            (Set<WidgetState> states) {
+          if (states.contains(WidgetState.disabled)) {
             return null;
           }
-          if (states.contains(MaterialState.selected)) {
+          if (states.contains(WidgetState.selected)) {
             return toggleableActiveColor ?? StylingHelper.accent_color;
           }
           return null;
@@ -219,7 +218,7 @@ class App extends StatelessWidget {
       colorScheme: ColorScheme.fromSwatch(
         accentColor: hightlightColor ?? StylingHelper.highlight_color,
         brightness: brightness ?? Brightness.dark,
-      ).copyWith(background: backgroundColor ?? StylingHelper.primary_color),
+      ).copyWith(surface: backgroundColor ?? StylingHelper.primary_color),
     );
   }
 

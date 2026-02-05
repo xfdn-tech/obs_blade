@@ -99,11 +99,6 @@ class _EditConnectionDialogState extends State<EditConnectionDialog> {
           const Text('Edit Connection'),
           CupertinoButton(
             padding: const EdgeInsets.only(right: 4.0),
-            minSize: 0,
-            child: const Text(
-              'Delete',
-              style: TextStyle(color: CupertinoColors.destructiveRed),
-            ),
             onPressed: () {
               ModalHandler.showBaseDialog(
                 context: context,
@@ -118,7 +113,11 @@ class _EditConnectionDialogState extends State<EditConnectionDialog> {
                   },
                 ),
               );
-            },
+            }, minimumSize: const Size(0, 0),
+            child: const Text(
+              'Delete',
+              style: TextStyle(color: CupertinoColors.destructiveRed),
+            ),
           ),
         ],
       ),

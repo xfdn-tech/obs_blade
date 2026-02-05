@@ -108,7 +108,7 @@ class _SlideControlsState extends State<SlideControls> {
             activeDotColor: Theme.of(context)
                 .switchTheme
                 .trackColor!
-                .resolve({MaterialState.selected})!,
+                .resolve({WidgetState.selected})!,
             dotHeight: 12.0,
             dotWidth: 12.0,
           ),

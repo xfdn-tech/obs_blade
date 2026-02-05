@@ -142,7 +142,7 @@ class ModalHandler {
       decoration: BoxDecoration(
         color: Theme.of(context)
             .cardColor
-            .withOpacity(blurryBackground ? StylingHelper.opacity_blurry : 1),
+            .withValues(alpha:blurryBackground ? StylingHelper.opacity_blurry : 1),
         borderRadius: const BorderRadius.vertical(
           top: Radius.circular(kBaseCardBorderRadius),
         ),
